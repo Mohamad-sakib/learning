@@ -113,7 +113,10 @@ readFile();
 
 **errorhandeling** using `try ,catch ,finally block`
 
-snipit --> code templates.
+**snipit** --> code templates.
+
+every process end returning its exit code that tell sucess status of process
+all non zero are considered not successfull and 0 only represents sucess;
 
 mocking --> faking third party function to test function or functionality written in code that depends on.
 `like`
@@ -147,4 +150,4 @@ main();
 //therefore we need to sepreate both of them;
 ```
 
-**learning** -`follow the process that lead to progress` -`keep asking question to yourself;` -`making assumptions mostly instally for io and unitlites` -`only mock the thirdPart methods for testing always` -`try to most thing automaited` -`toDOlist ,make,complete tasks,update it and  complete,update keep doing ` -`seprate thinking or thought process and mind flow anothewise it ends up with mesh`
+**learning** -`follow the process that lead to progress` -`keep asking question to yourself;` -`making assumptions mostly initally for io and unitlites` -`only mock the thirdPart methods for testing always` -`try to most thing automaited` -`toDOlist ,make,complete tasks,update it and  complete,update keep doing ` -`seprate thinking or thought process and mind flow anothewise it ends up with mesh`

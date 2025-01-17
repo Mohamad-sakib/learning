@@ -151,3 +151,7 @@ main();
 ```
 
 **learning** -`follow the process that lead to progress` -`keep asking question to yourself;` -`making assumptions mostly initally for io and unitlites` -`only mock the thirdPart methods for testing always` -`try to most thing automaited` -`toDOlist ,make,complete tasks,update it and  complete,update keep doing ` -`seprate thinking or thought process and mind flow anothewise it ends up with mesh`
+
+flow --> (think of solution at idea state) --> think of modules --> write all modules --> take each module one after another --> think of its functinalities and requirement --> built them --> think for another -->write --> bulid --> next unitl all over.
+
+once have tasks for module --> write first test cases for the task then implement accoring to requirement i.e follow the process towards progress;

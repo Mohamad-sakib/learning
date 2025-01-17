@@ -147,8 +147,4 @@ main();
 //therefore we need to sepreate both of them;
 ```
 
-**learning**
-
-## -`follow the process that lead to progress` -`keep asking question to yourself;` -`making assumptions mostly instally for io and unitlites` -`only mock the thirdPart methods for testing always` -`try to most thing automaited` -`toDOlist ,make,complete tasks,update it and  complete,update keep doing `
-
--`seprate thinking or thought process and mind flow anothewise it ends up with mesh`
+**learning** -`follow the process that lead to progress` -`keep asking question to yourself;` -`making assumptions mostly instally for io and unitlites` -`only mock the thirdPart methods for testing always` -`try to most thing automaited` -`toDOlist ,make,complete tasks,update it and  complete,update keep doing ` -`seprate thinking or thought process and mind flow anothewise it ends up with mesh`

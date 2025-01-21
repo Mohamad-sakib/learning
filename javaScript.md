@@ -116,7 +116,7 @@ readFile();
 **snipit** --> code templates.
 
 every process end returning its exit code that tell sucess status of process
-all non zero are considered not successfull and 0 only represents sucess;
+all non zero are considered as symbol of not successfull and 0 only represents sucess;
 
 mocking --> faking third party function to test function or functionality written in code that depends on.
 `like`

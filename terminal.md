@@ -1,4 +1,8 @@
-# input stream and output stream
+# input stream and output stream and error stream
+
+# cut , unique , sort
+
+# lc or lc -l
 
 # pipling
 
@@ -59,3 +63,25 @@ grep -l(only filenames that contains atleast one given text pattern) "test Regax
 **-d skip to skip is Directory error message in search output**
 
 `jot`**-->command** **|genreate numbers in range|**
+
+# allias
+
+# .zshrc file
+
+# $? -> exit code of previous process
+
+# zsh shell
+
+# proces , strams -> std input, output, error streams
+
+# $sakib here $ is used to access varible sakib in global scope of shell script
+
+# a=2 creating variable.
+
+# $PATH
+
+# how a process get lauch in terminal by shell;
+
+# $PS1 holds shell scripit for prompt and can be modified
+
+# cd -

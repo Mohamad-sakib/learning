@@ -155,3 +155,56 @@ main();
 flow --> (think of solution at idea state) --> think of modules --> write all modules --> take each module one after another --> think of its functinalities and requirement --> built them --> think for another -->write --> bulid --> next unitl all over.
 
 once have tasks for module --> write first test cases for the task then implement accoring to requirement i.e follow the process towards progress;
+
+**Deno.exit()** to set exit immedielty with exit code given to it ;
+or Exit code can also be updated changing the varibale **Deno.ExitCode**
+
+if ExitCode is 0 means process executed successfully and non zero value means process did execute successfully.
+
+**AssertThrows** to test fns throw errors
+
+**beforeEach(),afterEach(),beforAll(),afterAll() for testing.**
+**creating error templates** so that errorMsg can be formated as per user requirement
+throwing errors using **throw** and catching it using ""**catch block**""
+**tryCatchBlocks**
+
+```testing guidelines
+- Testing
+
+  - Separate test file per src file
+  - describe/it naming conventions
+
+    - Name behaviour over values
+      - Correct:
+        it('should extract as many lines as the file size when file is smaller than count option')
+      - Incorrect:
+        it('should give 5 lines for head(-n,ten_lines.txt))
+
+  - assertThrows
+    - use assertThrows to test errors that are being thrown from Deno.readTextFileSync
+  - mock in beforeEach
+
+- No strings. Only strings at entry/exit
+- Consider enriching data in stages
+- Validation can happen in more than one place
+- Decide wisely between objects and arrays.
+  - Do you have an order?
+  - Do you have names?
+- No need to throw errors. Errors can be handled by returning values as well.
+- Test units. Each separate stage can be tested on its own by assuming that the other stages work well.
+- Use console.error to print to error stream
+- Use Deno.exit while exiting
+- Throwing errors
+  - throw richer objects
+```
+
+**synchronous and Asynchronous execution** and **synchronous and Asynchronous execution fns**
+
+**Deno.readTextFileSync();** to read file sunchrounously
+**Deno.readTextFile();**to read file Asynchronously
+**setTimeout() and setInterval() both are Asunchrous fns**
+**console.error**
+
+# flow of execution cann't always be same like describe and it doestn't work as seems
+
+# catch all error of progarm at same place

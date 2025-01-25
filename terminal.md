@@ -72,6 +72,8 @@ grep -l(only filenames that contains atleast one given text pattern) "test Regax
 
 # zsh shell
 
+# zsh has environment variable not global variable
+
 # proces , strams -> std input, output, error streams
 
 # $sakib here $ is used to access varible sakib in global scope of shell script
@@ -82,6 +84,41 @@ grep -l(only filenames that contains atleast one given text pattern) "test Regax
 
 # how a process get lauch in terminal by shell;
 
-# $PS1 holds shell scripit for prompt and can be modified
+# $PS1 holds shell scripit for primary prompt command on shell and can be modified. it defines the appreace of primary prompt command.
+
+# shell scripting means programing or coding or scripting for shell to customize shell or add new feature to it.
+
+# same as web scripting means writing sctript or code for webapplication to create feature of web application
 
 # cd -
+
+# exit
+
+# escape sequeance or sequeance characters are chars with special meaning that shell doesn't read as normal text or literal, read special beacause of specail functionality they offers
+
+# but to make shell read them as normal character or literal we do someting called escaping, to escape escape character in shell % is used.
+
+# %% here first % is escaping {means telling shell to read it as literal} second %
+
+# PROMPT_COMMAND holds command that executes just before PS1 is displayed.
+
+# Oh My Zsh => Oh My Zsh is essentially a customized version of the .zshrc file that is created and maintained by the community to enhance the Zsh shell experience.(not installd by default) :-
+
+## sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# What Does Oh My Zsh Add to .zshrc?
+
+# -->themes, plugins, ease of use, customizability
+
+Zsh Escape Description
+%n Username
+%m Hostname (up to the first .)
+%M Full hostname
+%~ Current working directory, with ~ for $HOME
+%1~ Basename of the current directory
+%d or %/ Full working directory
+%t Current time in 12-hour HH:MM format
+%T Current time in 24-hour HH:MM format
+%D{...} Custom date/time format (e.g., %D{%a %b %d})
+%# # if root, % otherwise
+%% A literal % character

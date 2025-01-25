@@ -110,15 +110,91 @@ grep -l(only filenames that contains atleast one given text pattern) "test Regax
 
 # -->themes, plugins, ease of use, customizability
 
-Zsh Escape Description
-%n Username
-%m Hostname (up to the first .)
-%M Full hostname
-%~ Current working directory, with ~ for $HOME
-%1~ Basename of the current directory
-%d or %/ Full working directory
-%t Current time in 12-hour HH:MM format
-%T Current time in 24-hour HH:MM format
-%D{...} Custom date/time format (e.g., %D{%a %b %d})
-%# # if root, % otherwise
-%% A literal % character
+| Escape Sequence | Description                                     |
+| --------------- | ----------------------------------------------- |
+| `%n`            | Username                                        |
+| `%m`            | Hostname (up to the first `.`)                  |
+| `%M`            | Full hostname                                   |
+| `%~`            | Current working directory, with `~` for `$HOME` |
+| `%1~`           | Basename of the current directory               |
+| `%d` or `%/`    | Full working directory                          |
+| `%t`            | Current time in 12-hour HH:MM format            |
+| `%T`            | Current time in 24-hour HH:MM format            |
+| `%D{...}`       | Custom date/time format (e.g., `%D{%a %b %d}`)  |
+| `%#`            | `#` if root, `%` otherwise                      |
+| `%%`            | A literal `%` character                         |
+
+| Step Number | Step Name           | Description                                                                                                              |
+| ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 1           | User Input          | The user types `ls` and presses Enter.                                                                                   |
+| 2           | Tokenization        | The shell parses the input into tokens (command: `ls`, arguments: none).                                                 |
+| 3           | Path Resolution     | The shell searches for the `ls` executable in directories listed in the PATH environment variable.                       |
+| 4           | Forking             | The shell creates a child process using `fork()` to execute the command.                                                 |
+| 5           | Program Execution   | The child process replaces its image with the `ls` program using `exec()`.                                               |
+| 6           | Output Handling     | The `ls` program executes and lists the contents of the current directory, sending output to standard output (terminal). |
+| 7           | Process Termination | Once the `ls` command completes, the child process terminates.                                                           |
+| 8           | Prompt Display      | The shell displays a prompt again, indicating that it is ready for the next command.                                     |
+
+# Steps for Running the ls Command:
+
+User Input: The user types ls and presses Enter.
+
+- Tokenization: The shell breaks the input into tokens to identify the command (ls) and any arguments.
+
+- Command Type Check:
+
+  - Internal Command Check: The shell first checks if the command is a built-in (internal) command, such as cd, echo, or exit. If ls were an internal command, it would execute directly without further steps.
+  - External Command Check: If the command is not internal, the shell determines that it is external and proceeds to locate the program.
+
+- Path Resolution: The shell searches for the ls executable in directories listed in the PATH environment variable.
+
+- Forking: The shell creates a child process to handle the external command.
+
+- Program Execution: The child process executes the ls program using the exec() system call.
+
+- Output Handling: The ls program runs and sends its output to standard output (the terminal).
+
+- Process Termination: The child process terminates after ls finishes execution, and the shell resumes control.
+
+- Prompt Display: The shell displays the prompt, ready for the next command.
+
+# points to note
+
+- Internal commands (also known as built-in commands) are part of the shell program itself and do not exist as separate files in the filesystem
+
+- Forking :- Forking refers to the process of creating a new child process from an existing parent process in an operating system. The new child process is a duplicate of the parent process, but it runs independently.
+
+- Does shell lauch other process?
+  The shell itself does not directly launch the ls program. Instead, it creates a new child process that executes the ls program,how -->
+  Shell Creates a Child Process:
+
+  - When a command like ls is executed, the shell uses the fork() system call to create a child process.
+
+  - This child process is initially a copy of the parent shell process (i.e., it starts as a duplicate of the shell).
+
+  - Child Process Executes the Command:
+
+    - In the child process, the shell uses the exec() family of system calls (e.g., execvp()) to replace the shell's code in memory with the executable code of the ls program.
+    - After this step, the child process is no longer a shell—it becomes the ls program.
+
+  - Parent Shell Waits (Optional):
+
+    - The parent shell can wait for the child process to complete execution using the wait() system call (if the command is run in the foreground).//measns parent denpends on the ouput of child to process furter
+
+  - If the command is run in the background (e.g., with &), the parent shell does not wait.//that means output of those may or may not be giving someting to parent perocess but parent doesn't depend on the out of them.
+
+- Child Process Terminates:
+
+  - After the ls program completes its task, the child process terminates, and its resources are released.
+
+- Parent Shell Resumes:
+
+The parent shell regains control and displays a prompt for the next command.
+
+**summary**
+
+The parent shell creates a child process.
+The child process is replaced by the executable file (e.g., ls) using exec().
+The parent shell optionally waits for the child process to finish.
+
+|About Alias creation ,updation and flow of execution [Open alias.md](alias.md)|

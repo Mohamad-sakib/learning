@@ -207,4 +207,4 @@ throwing errors using **throw** and catching it using ""**catch block**""
 
 # flow of execution cann't always be same like describe and it doestn't work as seems
 
-# catch all error of progarm at same place
+# catch all error of progarm at same place.

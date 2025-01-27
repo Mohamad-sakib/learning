@@ -25,6 +25,7 @@ allows web pages to be updated asynchronously by exchanging data with a web serv
 - are fns that executes one after another.
 - synch fns block the flow of execution of program untill currentely executing - sync executes completely means
 - sync don't allow js engine to execute another instruction untile it executes completely.
+- fns executes and completes their execution rightaway when they are called in call stack and block the main thread untill it completes its execution.
 
 problem ?
 
@@ -42,3 +43,15 @@ problem ?
 - once asynch operation is done,its callback is pushed to callback queue
 - the event loop look for empty call stack to push callback of asynch fns from callback queue
 - then java engine executes them concurrentely.
+- async fns take async call backs that are fns that are given to async fns to run later
+- async fns's execution always starts immediately but don't block the flow exection and let js run rest of code while async fns's execution is done in background. and thier callback are called once its execution is done, callback are pushed to callback queue, all sync fns are executed ,call stack is empty.
+- flow --> js runtime push them to call back queue once async are done with execution and they are later pushed to call stack when event loop finds call stack empty.
+
+## sync callback vs async callback
+
+callback given to async are called asynch callback
+callback given to sync are called synch callback
+
+both are executed differetly
+sync callback are executed just after the sync function is called, if sync callback are called inside the sync function.
+while for it is different since they are called after all sync function are executed.

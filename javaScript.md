@@ -202,9 +202,24 @@ throwing errors using **throw** and catching it using ""**catch block**""
 
 **Deno.readTextFileSync();** to read file sunchrounously
 **Deno.readTextFile();**to read file Asynchronously
-**setTimeout() and setInterval() both are Asunchrous fns**
+**setTimeout() and setInterval() both are asynchnrous fns**
 **console.error**
 
 # flow of execution cann't always be same like describe and it doestn't work as seems
 
 # catch all error of progarm at same place.
+
+what is Opps ?
+why to learn Opps?
+
+Opps(object oriented programming)
+
+1. class and instance of class.
+2. creation of class and its object
+3. initializing instance of class
+4. constructer
+5. public and private fields
+6. public and private methods
+7. rules for class creation and what can be written in it.
+8. new keyword to create instance of class
+9. . opertor (member operator)
